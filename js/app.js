@@ -110,8 +110,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    /* ==========================================================================
+       4. MENÚ MÓVIL
+       ========================================================================== */
+    const initMobileMenu = () => {
+        const toggleBtn = document.getElementById('mobile-menu-toggle');
+        const nav = document.querySelector('nav');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+
+        if (toggleBtn && nav && backdrop) {
+            toggleBtn.addEventListener('click', () => {
+                nav.classList.toggle('-translate-x-full');
+                backdrop.classList.toggle('hidden');
+            });
+
+            backdrop.addEventListener('click', () => {
+                nav.classList.add('-translate-x-full');
+                backdrop.classList.add('hidden');
+            });
+        }
+    };
+
     // Inicializar los módulos
     initDarkMode();
     initDropdowns();
     initModals();
+    initMobileMenu();
 });

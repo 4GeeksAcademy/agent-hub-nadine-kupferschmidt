@@ -27,7 +27,7 @@
 <body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased md:pl-64">
 
     <!-- Barra lateral de navegación -->
-    <nav class="fixed inset-y-0 left-0 z-30 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 p-6 hidden md:flex flex-col gap-6">
+    <nav class="fixed inset-y-0 left-0 z-40 flex w-64 flex-col gap-6 border-r border-slate-200 bg-white p-6 -translate-x-full transition-transform duration-300 dark:border-slate-800 dark:bg-slate-900 md:translate-x-0 md:z-30">
         <h2 class="font-heading text-xl font-bold tracking-tight text-slate-900 dark:text-white">AgentHub</h2>
         <ul class="space-y-1.5 flex-1">
             <li><a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 transition-colors">Dashboard</a></li>
@@ -41,36 +41,40 @@
 
     <!-- Barra superior -->
     <header class="sticky top-0 z-20 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-6 py-4 backdrop-blur">
+        <button id="mobile-menu-toggle" type="button" class="mr-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 dark:border-slate-700 dark:text-slate-200 md:hidden" aria-label="Abrir menú">☰</button>
         <h1 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Dashboard</h1>
-        <button id="dark-mode-toggle" type="button" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">Modo oscuro</button>
+        <button id="dark-mode-toggle" type="button" aria-label="Cambiar modo de color" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+            <svg class="h-4 w-4 dark:hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21m8.966-8.966h-2.25m-13.5 0H3m15.364 6.364l-1.591-1.591M6.758 6.758L5.167 5.167m12.728 0l-1.591 1.591M6.758 17.242l-1.591 1.591M12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5z" />
+            </svg>
+            <svg class="hidden h-4 w-4 dark:block" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+            </svg>
+        </button>
     </header>
 
     <!-- Contenido principal -->
-    <main class="p-6 space-y-8 max-w-7xl">
+    <main class="p-6 space-y-8 max-w-7xl min-w-[880px]">
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <h2 class="col-span-full font-heading text-lg font-semibold text-slate-800 dark:text-slate-200">Métricas principales</h2>
 
             <!-- Tarjetas de métrica -->
             <article class="p-6 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col gap-3 relative overflow-hidden border-l-4 border-l-emerald-500">
-                <span class="text-2xl p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 w-fit">💰</span>
                 <h3 class="text-sm font-medium text-slate-500 dark:text-slate-400">Ingresos totales (este mes)</h3>
                 <p class="font-heading text-2xl font-bold text-slate-900 dark:text-white">$48,200</p>
             </article>
 
             <article class="p-6 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col gap-3 relative overflow-hidden border-l-4 border-l-amber-500">
-                <span class="text-2xl p-2.5 rounded-lg bg-amber-50 dark:bg-amber-950/50 w-fit">📉</span>
                 <h3 class="text-sm font-medium text-slate-500 dark:text-slate-400">Pérdida por descuentos/cupones</h3>
                 <p class="font-heading text-2xl font-bold text-slate-900 dark:text-white">$3,150</p>
             </article>
 
             <article class="p-6 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col gap-3 relative overflow-hidden border-l-4 border-l-indigo-500">
-                <span class="text-2xl p-2.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 w-fit">🤖</span>
                 <h3 class="text-sm font-medium text-slate-500 dark:text-slate-400">Agentes activos</h3>
                 <p class="font-heading text-2xl font-bold text-slate-900 dark:text-white">132</p>
             </article>
 
             <article class="p-6 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col gap-3 relative overflow-hidden border-l-4 border-l-rose-500">
-                <span class="text-2xl p-2.5 rounded-lg bg-rose-50 dark:bg-rose-950/50 w-fit">⚠️</span>
                 <h3 class="text-sm font-medium text-slate-500 dark:text-slate-400">Agentes fallando</h3>
                 <p class="font-heading text-2xl font-bold text-slate-900 dark:text-white">4</p>
             </article>
@@ -79,12 +83,40 @@
         <!-- Placeholder del gráfico -->
         <section class="space-y-3">
             <h2 class="font-heading text-lg font-semibold text-slate-800 dark:text-slate-200">Actividad semanal</h2>
-            <div class="h-64 rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-900/50 flex items-center justify-center p-6 text-center shadow-sm">
-                <p class="text-slate-500 dark:text-slate-400 font-medium">Gráfico de actividad semanal (próximamente)</p>
+            <div class="h-64 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 flex items-end justify-between gap-2 sm:gap-6 shadow-sm">
+                <div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+                    <div class="w-full max-w-[40px] h-[40%] bg-indigo-500 dark:bg-indigo-400 rounded-t"></div>
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Lun</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+                    <div class="w-full max-w-[40px] h-[65%] bg-indigo-500 dark:bg-indigo-400 rounded-t"></div>
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Mar</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+                    <div class="w-full max-w-[40px] h-[50%] bg-indigo-500 dark:bg-indigo-400 rounded-t"></div>
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Mié</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+                    <div class="w-full max-w-[40px] h-[85%] bg-indigo-500 dark:bg-indigo-400 rounded-t"></div>
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Jue</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+                    <div class="w-full max-w-[40px] h-[70%] bg-indigo-500 dark:bg-indigo-400 rounded-t"></div>
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Vie</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+                    <div class="w-full max-w-[40px] h-[30%] bg-indigo-500 dark:bg-indigo-400 rounded-t"></div>
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Sáb</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 h-full justify-end flex-1">
+                    <div class="w-full max-w-[40px] h-[20%] bg-indigo-500 dark:bg-indigo-400 rounded-t"></div>
+                    <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Dom</span>
+                </div>
             </div>
         </section>
     </main>
 
+    <div id="mobile-menu-backdrop" class="fixed inset-0 z-30 hidden bg-black/50 md:hidden"></div>
     <script src="js/app.js" defer></script>
 </body>
 </html>
