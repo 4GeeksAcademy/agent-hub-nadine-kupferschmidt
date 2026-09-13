@@ -28,7 +28,18 @@
 
     <!-- Barra lateral de navegación -->
     <nav class="fixed inset-y-0 left-0 z-40 flex w-64 flex-col gap-6 border-r border-slate-200 bg-white p-6 -translate-x-full transition-transform duration-300 dark:border-slate-800 dark:bg-slate-900 md:translate-x-0 md:z-30">
-        <h2 class="font-heading text-xl font-bold tracking-tight text-slate-900 dark:text-white">AgentHub</h2>
+        <div class="inline-flex items-center gap-3 select-none group focus:outline-none">
+            <div class="w-9 h-9 shrink-0 rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-600/25 flex items-center justify-center transition-transform duration-150 group-hover:scale-105">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+            </div>
+            <span class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-none shrink-0">AgentHub</span>
+        </div>
         <ul class="space-y-1.5 flex-1">
             <li><a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 transition-colors">Dashboard</a></li>
             <li><a href="users.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 transition-colors">Gestión de usuarios</a></li>
@@ -41,7 +52,18 @@
 
     <!-- Barra superior -->
     <header class="sticky top-0 z-20 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-6 py-4 backdrop-blur">
-        <button id="mobile-menu-toggle" type="button" class="mr-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 dark:border-slate-700 dark:text-slate-200 md:hidden" aria-label="Abrir menú">☰</button>
+        <div class="flex items-center gap-2 mr-3 md:mr-0">
+            <button id="mobile-menu-toggle" type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 dark:border-slate-700 dark:text-slate-200 md:hidden" aria-label="Abrir menú">☰</button>
+            <div class="md:hidden w-9 h-9 shrink-0 rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-600/25 flex items-center justify-center">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+            </div>
+        </div>
         <h1 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Gestión de usuarios</h1>
         <button id="dark-mode-toggle" type="button" aria-label="Cambiar modo de color" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3.5 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
             <svg class="h-4 w-4 dark:hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

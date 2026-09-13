@@ -376,3 +376,37 @@ El <pre> de la traza técnica: fondo oscuro contrastante incluso en modo claro (
 
 Contenido: Aplicá estilos de Tailwind a este archivo completo (estructura y contenido ya definidos, no los alteres): #file:errors.html
 ```
+
+---
+
+## Logo / Brand lockup (todas las páginas)
+
+**Prompt:**
+```
+Actúa como un Frontend Engineer y UI Designer senior especializado en Tailwind CSS puro.
+
+Quiero actualizar el logo / brand lockup de mi aplicación con las siguientes especificaciones estrictas:
+
+REGLAS TÉCNICAS OBLIGATORIAS:
+
+SOLO UTILIDADES DE TAILWIND CSS: Cero archivos CSS externos, cero etiquetas <style>, cero atributos style="" en línea.
+EN UNA SOLA FILA HORIZONTAL: El isotipo (icono) y el texto de la marca "AgentHub" DEBEN estar perfectamente alineados en el mismo eje horizontal continuo (sin subtítulos por debajo, sin saltos de línea ni flex-direction column).
+SOPORTE DUAL MODO CLARO Y MODO OSCURO: Adaptación automática mediante prefijos dark:.
+SVG EN LÍNEA: Utiliza el SVG vectorial nativo con viewBox="0 0 24 24" para que no requiera imágenes externas ni genere saltos de maquetación (CLS).
+
+ESTRUCTURA VISUAL EXACTA DEL LOGO:
+
+Contenedor principal: inline-flex items-center gap-3 select-none group focus:outline-none
+Isotipo (Caja del icono):
+Dimensiones: w-9 h-9 shrink-0 rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-600/25 flex items-center justify-center transition-transform duration-150 group-hover:scale-105
+SVG interno (Red / Nodos de 3 puntos):
+<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="18" cy="5" r="3"></circle>
+<circle cx="6" cy="12" r="3"></circle>
+<circle cx="18" cy="19" r="3"></circle>
+<line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+<line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+</svg>
+Texto de marca ("AgentHub"):
+text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-none shrink-0
+```
