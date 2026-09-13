@@ -261,3 +261,57 @@ Modales: mismo estilo centrado con backdrop que ya usamos — IMPORTANTE: no te 
 
 Contenido: Aplicá estilos de Tailwind a este archivo completo (estructura y contenido ya definidos, no los alteres): #file:skills.html
 ```
+
+---
+
+## contracts.html — Estructura + Contenido (Contrataciones de agentes)
+
+**Prompt:**
+```
+Rol: Sos un desarrollador frontend que sigue un proceso de construcción por capas (estructura → contenido → estilo), sin adelantarte a la capa de estilo todavía.
+
+Stack: HTML semántico puro. Sin Tailwind, sin ninguna clase CSS, sin atributos style todavía. Podés usar los atributos data-* de dropdown/modal, porque son ganchos para js/app.js ya existente.
+
+Restricciones:
+
+Reutilizá exactamente la misma barra lateral (<nav>) y barra superior (<header>) de skills.html (#file:skills.html), cambiando el <h1> a "Contrataciones de agentes" y el link activo de la sidebar a "Contrataciones".
+El dropdown usa los mismos atributos que ya soporta js/app.js: data-dropdown-container, data-dropdown-trigger, data-dropdown-menu.
+El modal de "Ver detalle" usa: data-modal-open="contract-detail-{id}", data-modal="contract-detail-{id}", data-modal-close="contract-detail-{id}", data-modal-backdrop="contract-detail-{id}".
+No agregues JavaScript propio de esta página.
+
+Contenido: HTML completo (estructura + contenido, sin estilos) para "Contrataciones de agentes" de AgentHub. Especificación:
+
+Una tabla con columnas: Cliente, Agente, Skills contratadas, Fecha inicio, Fecha fin, Total pagado, Acciones. 4 filas:
+Café Andina S.A. | SupportBot | Navegación web, Lectura de documentos | 15/01/2026 | 15/07/2026 | $420
+EcoRetail | SalesAssist | Gestión de calendario, Lectura de documentos | 01/02/2026 | 01/08/2026 | $380
+Brasaland | DocuParser | Lectura de documentos | 01/11/2025 | 01/05/2026 | $200
+StudioByte | SchedulerAI | Gestión de calendario, Navegación web | 10/03/2026 | 10/09/2026 | $400
+Cada fila tiene un dropdown "⋮" con la opción "Ver detalle".
+"Ver detalle" abre un modal con el desglose completo del contrato: cliente, agente, fechas, y una lista línea por línea de cada skill contratada con su precio individual, más el total al final. Usá estos precios unitarios para el desglose:
+Navegación web: $220
+Lectura de documentos: $200
+Gestión de calendario: $180
+Generá ids únicos por contrato (contract-1, contract-2, etc.) para vincular cada modal con su trigger.
+
+Generá el archivo completo, con el mismo <head> que skills.html
+```
+
+## contracts.html — Estilo (Contrataciones de agentes)
+
+**Prompt:**
+```
+Rol: Sos un desarrollador frontend senior especializado en Tailwind CSS y diseño de paneles de administración.
+
+Stack: Tailwind CSS vía CDN (misma configuración que skills.html).
+
+Restricciones:
+
+No cambies la estructura de etiquetas ni el contenido/texto existente. Solo agregá clases de Tailwind.
+Reutilizá el mismo <head>, sidebar y topbar que skills.html (#file:skills.html), con "Contrataciones" como link activo.
+La tabla usa exactamente el mismo estilo que la de users.html (#file:users.html): mismo contenedor de tarjeta, mismo thead con fondo distinto y texto en mayúsculas pequeñas, mismas filas con hover y borde inferior. IMPORTANTE: no le agregues overflow-x-auto al contenedor (eso causó un bug con los dropdowns en una sección anterior).
+Las columnas "Fecha inicio", "Fecha fin" y "Total pagado" deben estar alineadas a la derecha o usar una fuente monoespaciada sutil, para que sea fácil comparar montos y fechas de un vistazo entre filas.
+El dropdown: mismo estilo que en las otras secciones, pero como acá el menú tiene solo UNA opción ("Ver detalle", sin "Eliminar"), ajustá el ancho del menú si hace falta para que no se vea desproporcionado.
+El modal: mismo estilo centrado con backdrop y "flex" que ya usamos (no te olvides la clase "flex" junto con "hidden"). Dentro del modal, separá visualmente el bloque de datos generales (<dl>) del bloque de "Skills contratadas" (con un separador sutil, ej. border-t, o un fondo levemente distinto), y el total pagado al final debe destacarse (texto más grande o en negrita) ya que es el dato de cierre del desglose.
+
+Contenido: Aplicá estilos de Tailwind a este archivo completo (estructura y contenido ya definidos, no los alteres): #file:contracts.html
+```
