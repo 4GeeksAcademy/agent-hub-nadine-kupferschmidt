@@ -2,6 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+        <script>
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgentHub - Log de errores</title>
     <!-- Google Fonts -->
@@ -99,7 +104,7 @@
                         <td class="whitespace-nowrap px-6 py-4">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones del error 1" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                                     <button type="button" data-modal-open="error-detail-1" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                                 </div>
@@ -114,7 +119,7 @@
                         <td class="whitespace-nowrap px-6 py-4">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones del error 2" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                                     <button type="button" data-modal-open="error-detail-2" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                                 </div>
@@ -129,7 +134,7 @@
                         <td class="whitespace-nowrap px-6 py-4">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones del error 3" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                                     <button type="button" data-modal-open="error-detail-3" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                                 </div>
@@ -144,7 +149,7 @@
                         <td class="whitespace-nowrap px-6 py-4">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones del error 4" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                                     <button type="button" data-modal-open="error-detail-4" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                                 </div>
@@ -159,7 +164,7 @@
                         <td class="whitespace-nowrap px-6 py-4">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones del error 5" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                                     <button type="button" data-modal-open="error-detail-5" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                                 </div>
@@ -174,7 +179,7 @@
                         <td class="whitespace-nowrap px-6 py-4">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones del error 6" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                                     <button type="button" data-modal-open="error-detail-6" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                                 </div>
@@ -195,7 +200,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones del error 1" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                             <button type="button" data-modal-open="error-detail-1" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                         </div>
@@ -210,7 +215,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones del error 2" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                             <button type="button" data-modal-open="error-detail-2" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                         </div>
@@ -225,7 +230,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones del error 3" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                             <button type="button" data-modal-open="error-detail-3" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                         </div>
@@ -240,7 +245,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones del error 4" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                             <button type="button" data-modal-open="error-detail-4" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                         </div>
@@ -255,7 +260,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones del error 5" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                             <button type="button" data-modal-open="error-detail-5" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                         </div>
@@ -270,7 +275,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones del error 6" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
-                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden flex flex-col w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
                             <button type="button" data-modal-open="error-detail-6" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
                         </div>

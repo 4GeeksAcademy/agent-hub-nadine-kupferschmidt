@@ -2,6 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+        <script>
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgentHub - Gestión de usuarios</title>
     <!-- Google Fonts -->
@@ -100,7 +105,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones de Marcela Rojas" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                                <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                                <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                                     <button type="button" data-modal-open="user-detail-1" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                                 </div>
@@ -115,7 +120,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones de Diego Fernández" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                                <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                                <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                                     <button type="button" data-modal-open="user-detail-2" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                                 </div>
@@ -130,7 +135,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones de Valentina Ruiz" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                                <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                                <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                                     <button type="button" data-modal-open="user-detail-3" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                                 </div>
@@ -145,7 +150,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones de Andrés Solano" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                                <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                                <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                                     <button type="button" data-modal-open="user-detail-4" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                                 </div>
@@ -160,7 +165,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div data-dropdown-container class="relative">
                                 <button type="button" data-dropdown-trigger aria-label="Acciones de Camila Herrera" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                                <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                                <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                                     <button type="button" data-modal-open="user-detail-5" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                                     <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                                 </div>
@@ -181,7 +186,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones de Marcela Rojas" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                        <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                             <button type="button" data-modal-open="user-detail-1" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                         </div>
@@ -196,7 +201,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones de Diego Fernández" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                        <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                             <button type="button" data-modal-open="user-detail-2" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                         </div>
@@ -211,7 +216,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones de Valentina Ruiz" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                        <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                             <button type="button" data-modal-open="user-detail-3" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                         </div>
@@ -226,7 +231,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones de Andrés Solano" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                        <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                             <button type="button" data-modal-open="user-detail-4" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                         </div>
@@ -241,7 +246,7 @@
                     </div>
                     <div data-dropdown-container class="relative">
                         <button type="button" data-dropdown-trigger aria-label="Acciones de Camila Herrera" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
-                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                        <div data-dropdown-menu class="hidden flex flex-col absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
                             <button type="button" data-modal-open="user-detail-5" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
                             <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
                         </div>

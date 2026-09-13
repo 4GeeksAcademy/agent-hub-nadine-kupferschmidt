@@ -2,6 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+        <script>
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgentHub - Dashboard</title>
     <!-- Google Fonts -->
