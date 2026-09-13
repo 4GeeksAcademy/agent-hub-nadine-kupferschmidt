@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentHub - Log de errores</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased md:pl-64">
+
+    <!-- Barra lateral de navegación -->
+    <nav class="fixed inset-y-0 left-0 z-30 hidden w-64 flex-col gap-6 border-r border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900 md:flex">
+        <h2 class="font-heading text-xl font-bold tracking-tight text-slate-900 dark:text-white">AgentHub</h2>
+        <ul class="flex-1 space-y-1.5">
+            <li><a href="index.html" class="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">Dashboard</a></li>
+            <li><a href="users.html" class="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">Gestión de usuarios</a></li>
+            <li><a href="agents.html" class="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">Gestión de agentes</a></li>
+            <li><a href="skills.html" class="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">Skills</a></li>
+            <li><a href="contracts.html" class="flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200">Contrataciones</a></li>
+            <li><a href="errors.html" aria-current="page" class="flex items-center gap-3 rounded-lg bg-indigo-50 px-3.5 py-2.5 text-sm font-semibold text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">Log de errores</a></li>
+        </ul>
+    </nav>
+
+    <!-- Barra superior -->
+    <header class="sticky top-0 z-20 flex items-center justify-between border-b border-slate-200 bg-white/80 px-6 py-4 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80">
+        <h1 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Log de errores</h1>
+        <button id="dark-mode-toggle" type="button" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">Modo oscuro</button>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="max-w-7xl space-y-8 p-6">
+        <section class="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <h2 class="font-heading text-lg font-semibold text-slate-800 px-6 pt-6 dark:text-slate-200">Registro de errores</h2>
+            <table class="w-full text-left text-sm">
+                <thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-500 dark:bg-slate-800/60 dark:text-slate-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 font-semibold">Timestamp</th>
+                        <th scope="col" class="px-6 py-4 font-semibold">Agente</th>
+                        <th scope="col" class="px-6 py-4 font-semibold">Tipo</th>
+                        <th scope="col" class="max-w-xs px-6 py-4 font-semibold">Descripción</th>
+                        <th scope="col" class="px-6 py-4 font-semibold">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-slate-200 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-slate-600 dark:text-slate-400">2026-03-14 09:32</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-medium text-slate-900 dark:text-white">SupportBot</td>
+                        <td class="whitespace-nowrap px-6 py-4"><span class="inline-block rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">Crítico</span></td>
+                        <td class="max-w-xs px-6 py-4 text-slate-600 dark:text-slate-400">El agente no respondió dentro del tiempo límite de la conexión.</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div data-dropdown-container class="relative">
+                                <button type="button" data-dropdown-trigger aria-label="Acciones del error 1" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                    <button type="button" data-modal-open="error-detail-1" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                                    <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-slate-200 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-slate-600 dark:text-slate-400">2026-03-15 14:10</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-medium text-slate-900 dark:text-white">DocuParser</td>
+                        <td class="whitespace-nowrap px-6 py-4"><span class="inline-block rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">Advertencia</span></td>
+                        <td class="max-w-xs px-6 py-4 text-slate-600 dark:text-slate-400">No se pudo procesar un documento en formato no soportado.</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div data-dropdown-container class="relative">
+                                <button type="button" data-dropdown-trigger aria-label="Acciones del error 2" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                    <button type="button" data-modal-open="error-detail-2" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                                    <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-slate-200 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-slate-600 dark:text-slate-400">2026-03-16 08:05</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-medium text-slate-900 dark:text-white">SalesAssist</td>
+                        <td class="whitespace-nowrap px-6 py-4"><span class="inline-block rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">Crítico</span></td>
+                        <td class="max-w-xs px-6 py-4 text-slate-600 dark:text-slate-400">Se perdió la conexión con el servicio de calendario.</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div data-dropdown-container class="relative">
+                                <button type="button" data-dropdown-trigger aria-label="Acciones del error 3" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                    <button type="button" data-modal-open="error-detail-3" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                                    <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-slate-200 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-slate-600 dark:text-slate-400">2026-03-17 11:47</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-medium text-slate-900 dark:text-white">SchedulerAI</td>
+                        <td class="whitespace-nowrap px-6 py-4"><span class="inline-block rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">Advertencia</span></td>
+                        <td class="max-w-xs px-6 py-4 text-slate-600 dark:text-slate-400">Se alcanzó el límite de solicitudes a la API de calendario.</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div data-dropdown-container class="relative">
+                                <button type="button" data-dropdown-trigger aria-label="Acciones del error 4" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                    <button type="button" data-modal-open="error-detail-4" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                                    <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-slate-200 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-slate-600 dark:text-slate-400">2026-03-18 16:20</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-medium text-slate-900 dark:text-white">DocuParser</td>
+                        <td class="whitespace-nowrap px-6 py-4"><span class="inline-block rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">Crítico</span></td>
+                        <td class="max-w-xs px-6 py-4 text-slate-600 dark:text-slate-400">El agente no respondió al procesar un lote de documentos grande.</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div data-dropdown-container class="relative">
+                                <button type="button" data-dropdown-trigger aria-label="Acciones del error 5" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                    <button type="button" data-modal-open="error-detail-5" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                                    <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-slate-200 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                        <td class="whitespace-nowrap px-6 py-4 font-mono text-slate-600 dark:text-slate-400">2026-03-19 10:03</td>
+                        <td class="whitespace-nowrap px-6 py-4 font-medium text-slate-900 dark:text-white">SupportBot</td>
+                        <td class="whitespace-nowrap px-6 py-4"><span class="inline-block rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-semibold text-sky-700 dark:bg-sky-950/50 dark:text-sky-300">Informativo</span></td>
+                        <td class="max-w-xs px-6 py-4 text-slate-600 dark:text-slate-400">El agente se reinició automáticamente tras una actualización de skills.</td>
+                        <td class="whitespace-nowrap px-6 py-4">
+                            <div data-dropdown-container class="relative">
+                                <button type="button" data-dropdown-trigger aria-label="Acciones del error 6" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                                <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                                    <button type="button" data-modal-open="error-detail-6" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                                    <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Modales de detalle de error -->
+        <section>
+            <h2 class="sr-only">Detalles de errores</h2>
+
+            <!-- Modal Error 1 -->
+            <div data-modal="error-detail-1" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6">
+                <div data-modal-backdrop="error-detail-1" class="absolute inset-0 bg-black/50"></div>
+                <div class="relative z-10 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900">
+                    <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white">Detalle del error - SupportBot</h3>
+                    <dl class="mt-5 space-y-3">
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Timestamp</dt>
+                        <dd class="font-mono text-sm font-semibold text-slate-900 dark:text-white">2026-03-14 09:32</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Agente</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">SupportBot</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Tipo</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Crítico</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Descripción</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">El agente no respondió dentro del tiempo límite de la conexión.</dd>
+                    </dl>
+                    <div class="mt-5 border-t border-slate-200 pt-5 dark:border-slate-800">
+                        <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white">Traza técnica (Stack Trace)</h4>
+                        <pre class="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100 dark:bg-slate-950 dark:text-slate-200">TimeoutError: Connection timed out after 30000ms
+    at AgentRunner.connect (/app/services/agent_runner.py:142)
+    at async ExecutionEngine.dispatch (/app/core/engine.py:88)
+    at async Worker.processTask (/app/workers/task_worker.py:53)</pre>
+                    </div>
+                    <button type="button" data-modal-close="error-detail-1" class="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Cerrar</button>
+                </div>
+            </div>
+
+            <!-- Modal Error 2 -->
+            <div data-modal="error-detail-2" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6">
+                <div data-modal-backdrop="error-detail-2" class="absolute inset-0 bg-black/50"></div>
+                <div class="relative z-10 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900">
+                    <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white">Detalle del error - DocuParser</h3>
+                    <dl class="mt-5 space-y-3">
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Timestamp</dt>
+                        <dd class="font-mono text-sm font-semibold text-slate-900 dark:text-white">2026-03-15 14:10</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Agente</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">DocuParser</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Tipo</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Advertencia</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Descripción</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">No se pudo procesar un documento en formato no soportado.</dd>
+                    </dl>
+                    <div class="mt-5 border-t border-slate-200 pt-5 dark:border-slate-800">
+                        <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white">Traza técnica (Stack Trace)</h4>
+                        <pre class="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100 dark:bg-slate-950 dark:text-slate-200">UnsupportedFileFormatException: File extension .xyz is not supported by skill 'Lectura de documentos'
+    at DocumentParserSkill.extractText (/app/skills/doc_parser.py:64)
+    at async AgentExecutor.runSkill (/app/core/executor.py:112)</pre>
+                    </div>
+                    <button type="button" data-modal-close="error-detail-2" class="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Cerrar</button>
+                </div>
+            </div>
+
+            <!-- Modal Error 3 -->
+            <div data-modal="error-detail-3" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6">
+                <div data-modal-backdrop="error-detail-3" class="absolute inset-0 bg-black/50"></div>
+                <div class="relative z-10 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900">
+                    <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white">Detalle del error - SalesAssist</h3>
+                    <dl class="mt-5 space-y-3">
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Timestamp</dt>
+                        <dd class="font-mono text-sm font-semibold text-slate-900 dark:text-white">2026-03-16 08:05</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Agente</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">SalesAssist</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Tipo</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Crítico</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Descripción</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Se perdió la conexión con el servicio de calendario.</dd>
+                    </dl>
+                    <div class="mt-5 border-t border-slate-200 pt-5 dark:border-slate-800">
+                        <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white">Traza técnica (Stack Trace)</h4>
+                        <pre class="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100 dark:bg-slate-950 dark:text-slate-200">CalendarServiceConnectionException: 503 Service Unavailable - Google Calendar API endpoint unreachable
+    at CalendarSkill.getAvailability (/app/skills/calendar.py:91)
+    at async SalesAssistAgent.handleRequest (/app/agents/sales_assist.py:37)</pre>
+                    </div>
+                    <button type="button" data-modal-close="error-detail-3" class="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Cerrar</button>
+                </div>
+            </div>
+
+            <!-- Modal Error 4 -->
+            <div data-modal="error-detail-4" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6">
+                <div data-modal-backdrop="error-detail-4" class="absolute inset-0 bg-black/50"></div>
+                <div class="relative z-10 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900">
+                    <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white">Detalle del error - SchedulerAI</h3>
+                    <dl class="mt-5 space-y-3">
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Timestamp</dt>
+                        <dd class="font-mono text-sm font-semibold text-slate-900 dark:text-white">2026-03-17 11:47</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Agente</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">SchedulerAI</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Tipo</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Advertencia</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Descripción</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Se alcanzó el límite de solicitudes a la API de calendario.</dd>
+                    </dl>
+                    <div class="mt-5 border-t border-slate-200 pt-5 dark:border-slate-800">
+                        <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white">Traza técnica (Stack Trace)</h4>
+                        <pre class="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100 dark:bg-slate-950 dark:text-slate-200">RateLimitExceededException: 429 Too Many Requests - Quota exceeded for project 'SchedulerAI-Prod'
+    at RateLimiter.checkQuota (/app/utils/rate_limiter.py:28)
+    at async CalendarSkill.scheduleEvent (/app/skills/calendar.py:145)</pre>
+                    </div>
+                    <button type="button" data-modal-close="error-detail-4" class="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Cerrar</button>
+                </div>
+            </div>
+
+            <!-- Modal Error 5 -->
+            <div data-modal="error-detail-5" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6">
+                <div data-modal-backdrop="error-detail-5" class="absolute inset-0 bg-black/50"></div>
+                <div class="relative z-10 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900">
+                    <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white">Detalle del error - DocuParser</h3>
+                    <dl class="mt-5 space-y-3">
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Timestamp</dt>
+                        <dd class="font-mono text-sm font-semibold text-slate-900 dark:text-white">2026-03-18 16:20</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Agente</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">DocuParser</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Tipo</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Crítico</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Descripción</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">El agente no respondió al procesar un lote de documentos grande.</dd>
+                    </dl>
+                    <div class="mt-5 border-t border-slate-200 pt-5 dark:border-slate-800">
+                        <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white">Traza técnica (Stack Trace)</h4>
+                        <pre class="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100 dark:bg-slate-950 dark:text-slate-200">MemoryOverflowException: Out of memory during PDF OCR processing (used: 2048MB, max: 2048MB)
+    at BatchProcessor.processBatch (/app/services/batch_processor.py:204)
+    at async Worker.executeJob (/app/workers/job_worker.py:88)</pre>
+                    </div>
+                    <button type="button" data-modal-close="error-detail-5" class="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Cerrar</button>
+                </div>
+            </div>
+
+            <!-- Modal Error 6 -->
+            <div data-modal="error-detail-6" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6">
+                <div data-modal-backdrop="error-detail-6" class="absolute inset-0 bg-black/50"></div>
+                <div class="relative z-10 w-full max-w-lg rounded-lg bg-white p-6 shadow-lg dark:bg-slate-900">
+                    <h3 class="font-heading text-lg font-semibold text-slate-900 dark:text-white">Detalle del error - SupportBot</h3>
+                    <dl class="mt-5 space-y-3">
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Timestamp</dt>
+                        <dd class="font-mono text-sm font-semibold text-slate-900 dark:text-white">2026-03-19 10:03</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Agente</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">SupportBot</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Tipo</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">Informativo</dd>
+                        <dt class="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">Descripción</dt>
+                        <dd class="text-sm font-semibold text-slate-900 dark:text-white">El agente se reinició automáticamente tras una actualización de skills.</dd>
+                    </dl>
+                    <div class="mt-5 border-t border-slate-200 pt-5 dark:border-slate-800">
+                        <h4 class="font-heading text-sm font-semibold text-slate-900 dark:text-white">Traza técnica (Stack Trace)</h4>
+                        <pre class="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-4 font-mono text-xs leading-relaxed text-slate-100 dark:bg-slate-950 dark:text-slate-200">AgentLifecycleEvent: Agent 'SupportBot' (id: agent-1) successfully restarted after hot-reloading skill 'Navegación web'
+    at LifecycleManager.reloadSkills (/app/core/lifecycle.py:76)
+    at SystemEvent.emit (/app/core/events.py:12)</pre>
+                    </div>
+                    <button type="button" data-modal-close="error-detail-6" class="mt-6 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800">Cerrar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js" defer></script>
+</body>
+</html>

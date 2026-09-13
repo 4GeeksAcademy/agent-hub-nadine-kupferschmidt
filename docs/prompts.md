@@ -315,3 +315,64 @@ El modal: mismo estilo centrado con backdrop y "flex" que ya usamos (no te olvid
 
 Contenido: Aplicá estilos de Tailwind a este archivo completo (estructura y contenido ya definidos, no los alteres): #file:contracts.html
 ```
+
+---
+
+## errors.html — Estructura + Contenido (Log de errores)
+
+**Prompt:**
+```
+Rol: Sos un desarrollador frontend que sigue un proceso de construcción por capas (estructura → contenido → estilo), sin adelantarte a la capa de estilo todavía.
+
+Stack: HTML semántico puro. Sin Tailwind, sin ninguna clase CSS, sin atributos style todavía. Podés usar los atributos data-* de dropdown/modal, porque son ganchos para js/app.js ya existente.
+
+Restricciones:
+
+Reutilizá exactamente la misma barra lateral (<nav>) y barra superior (<header>) de contracts.html (#file:contracts.html), cambiando el <h1> a "Log de errores" y el link activo de la sidebar a "Log de errores".
+El dropdown usa los mismos atributos que ya soporta js/app.js: data-dropdown-container, data-dropdown-trigger, data-dropdown-menu.
+El modal de "Ver detalle" usa: data-modal-open="error-detail-{id}", data-modal="error-detail-{id}", data-modal-close="error-detail-{id}", data-modal-backdrop="error-detail-{id}".
+El botón "Marcar como resuelto" NO abre modal — dejalo como un botón simple dentro del dropdown, sin funcionalidad de JS todavía (eso lo vemos aparte, no es parte de este prompt).
+No agregues JavaScript propio de esta página.
+
+Contenido: HTML completo (estructura + contenido, sin estilos) para "Log de errores" de AgentHub. Especificación:
+
+Una tabla con columnas: Timestamp, Agente, Tipo, Descripción, Acciones. 6 filas:
+2026-03-14 09:32 | SupportBot | Crítico | El agente no respondió dentro del tiempo límite de la conexión.
+2026-03-15 14:10 | DocuParser | Advertencia | No se pudo procesar un documento en formato no soportado.
+2026-03-16 08:05 | SalesAssist | Crítico | Se perdió la conexión con el servicio de calendario.
+2026-03-17 11:47 | SchedulerAI | Advertencia | Se alcanzó el límite de solicitudes a la API de calendario.
+2026-03-18 16:20 | DocuParser | Crítico | El agente no respondió al procesar un lote de documentos grande.
+2026-03-19 10:03 | SupportBot | Informativo | El agente se reinició automáticamente tras una actualización de skills.
+La columna "Tipo" muestra el valor como texto por ahora (el color del badge se aplica en Estilo).
+Cada fila tiene un dropdown "⋮" con dos opciones: "Ver detalle" y "Marcar como resuelto".
+"Ver detalle" abre un modal con la traza técnica completa del error (inventá un texto breve tipo stack trace para cada uno, coherente con su descripción).
+Generá ids únicos por error (error-1 a error-6) para vincular cada modal con su trigger.
+
+Generá el archivo completo, con el mismo <head> que contracts.html.
+```
+
+## errors.html — Estilo (Log de errores)
+
+**Prompt:**
+```
+Rol: Sos un desarrollador frontend senior especializado en Tailwind CSS y diseño de paneles de administración.
+
+Stack: Tailwind CSS vía CDN (misma configuración que contracts.html).
+
+Restricciones:
+
+No cambies la estructura de etiquetas ni el contenido/texto existente. Solo agregá clases de Tailwind.
+Reutilizá el mismo <head>, sidebar y topbar que contracts.html (#file:contracts.html), con "Log de errores" como link activo.
+La tabla usa el mismo estilo de tarjeta que las otras tablas (contenedor bg-white/dark:bg-slate-900, border, rounded-lg, shadow-sm, thead con fondo distinto, filas con hover). NO agregues overflow-x-auto.
+IMPORTANTE: la columna "Descripción" tiene textos largos — NO le pongas "whitespace-nowrap" (ni al th ni a los td de esa columna), dejá que el texto haga wrap normal, y agregale un ancho máximo razonable (ej. max-w-xs o max-w-sm) para que no estire la tabla.
+Badge de Tipo (dentro de un <span>, no en el <td> directamente, mismo patrón que en users.html):
+"Crítico" → rose
+"Advertencia" → amber
+"Informativo" → sky (celeste/azul)
+La columna Timestamp con fuente monoespaciada sutil (font-mono), igual que las fechas en contracts.html.
+El dropdown: mismo estilo ya usado, con sus 2 opciones ("Ver detalle" y "Marcar como resuelto").
+El modal: mismo estilo centrado con backdrop y "flex" (no te olvides esa clase junto con "hidden").
+El <pre> de la traza técnica: fondo oscuro contrastante incluso en modo claro (ej. bg-slate-900 con texto claro, o bg-slate-100/dark:bg-slate-950 con texto en tono legible), fuente monoespaciada, rounded-lg, padding, con scroll horizontal si el contenido es más ancho que el modal (overflow-x-auto SOLO en este elemento puntual, no en la tabla).
+
+Contenido: Aplicá estilos de Tailwind a este archivo completo (estructura y contenido ya definidos, no los alteres): #file:errors.html
+```
