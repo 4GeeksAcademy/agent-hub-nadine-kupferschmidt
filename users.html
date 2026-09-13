@@ -76,11 +76,12 @@
     </header>
 
     <!-- Contenido principal -->
-    <main class="p-6 space-y-8 max-w-7xl min-w-[880px]">
+    <main class="p-6 space-y-8 max-w-7xl">
         <section class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
             <h2 class="font-heading text-lg font-semibold text-slate-800 dark:text-slate-200 px-6 pt-6">Usuarios registrados</h2>
 
-            <table class="w-full min-w-[760px] text-left text-sm">
+            <div class="hidden md:block overflow-x-auto">
+            <table class="w-full min-w-full text-left text-sm">
                 <thead class="bg-slate-50 dark:bg-slate-800/60 text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     <tr>
                         <th scope="col" class="px-6 py-4 font-semibold">Nombre</th>
@@ -168,6 +169,85 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
+
+            <div class="block md:hidden divide-y divide-slate-200 dark:divide-slate-800">
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <p class="font-medium text-slate-900 dark:text-white">Marcela Rojas</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">marcela.rojas@brasaland.cr</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Pro</p>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-xs font-semibold text-emerald-700 dark:text-emerald-300">Activo</span>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones de Marcela Rojas" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
+                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                            <button type="button" data-modal-open="user-detail-1" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <p class="font-medium text-slate-900 dark:text-white">Diego Fernández</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">diego.fernandez@ecoretail.com</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Básico</p>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-xs font-semibold text-emerald-700 dark:text-emerald-300">Activo</span>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones de Diego Fernández" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
+                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                            <button type="button" data-modal-open="user-detail-2" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <p class="font-medium text-slate-900 dark:text-white">Valentina Ruiz</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">valentina.ruiz@cafeandina.com</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Enterprise</p>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-xs font-semibold text-emerald-700 dark:text-emerald-300">Activo</span>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones de Valentina Ruiz" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
+                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                            <button type="button" data-modal-open="user-detail-3" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <p class="font-medium text-slate-900 dark:text-white">Andrés Solano</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">andres.solano@logitech-cr.com</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Pro</p>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/50 text-xs font-semibold text-amber-700 dark:text-amber-300">Suspendido</span>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones de Andrés Solano" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
+                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                            <button type="button" data-modal-open="user-detail-4" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <p class="font-medium text-slate-900 dark:text-white">Camila Herrera</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">camila.herrera@studiobyte.io</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Básico</p>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">Inactivo</span>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones de Camila Herrera" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-colors">⋮</button>
+                        <div data-dropdown-menu class="hidden absolute right-0 top-full z-10 mt-2 w-40 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-1 shadow-lg">
+                            <button type="button" data-modal-open="user-detail-5" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Modales de detalle de usuarios -->

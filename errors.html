@@ -76,10 +76,11 @@
     </header>
 
     <!-- Contenido principal -->
-    <main class="max-w-7xl space-y-8 p-6 min-w-[880px]">
+    <main class="max-w-7xl space-y-8 p-6">
         <section class="rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <h2 class="font-heading text-lg font-semibold text-slate-800 px-6 pt-6 dark:text-slate-200">Registro de errores</h2>
-            <table class="w-full text-left text-sm">
+            <div class="hidden md:block overflow-x-auto">
+            <table class="w-full min-w-full text-left text-sm">
                 <thead class="bg-slate-50 text-xs uppercase tracking-wider text-slate-500 dark:bg-slate-800/60 dark:text-slate-400">
                     <tr>
                         <th scope="col" class="px-6 py-4 font-semibold">Timestamp</th>
@@ -182,6 +183,100 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
+
+            <div class="block md:hidden divide-y divide-slate-200 dark:divide-slate-800">
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <span class="inline-block rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">Crítico</span>
+                        <p class="font-medium text-slate-900 dark:text-white">SupportBot</p>
+                        <p class="font-mono text-xs text-slate-600 dark:text-slate-400">2026-03-14 09:32</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">El agente no respondió dentro del tiempo límite de la conexión.</p>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones del error 1" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            <button type="button" data-modal-open="error-detail-1" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <span class="inline-block rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">Advertencia</span>
+                        <p class="font-medium text-slate-900 dark:text-white">DocuParser</p>
+                        <p class="font-mono text-xs text-slate-600 dark:text-slate-400">2026-03-15 14:10</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">No se pudo procesar un documento en formato no soportado.</p>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones del error 2" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            <button type="button" data-modal-open="error-detail-2" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <span class="inline-block rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">Crítico</span>
+                        <p class="font-medium text-slate-900 dark:text-white">SalesAssist</p>
+                        <p class="font-mono text-xs text-slate-600 dark:text-slate-400">2026-03-16 08:05</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Se perdió la conexión con el servicio de calendario.</p>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones del error 3" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            <button type="button" data-modal-open="error-detail-3" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <span class="inline-block rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:bg-amber-950/50 dark:text-amber-300">Advertencia</span>
+                        <p class="font-medium text-slate-900 dark:text-white">SchedulerAI</p>
+                        <p class="font-mono text-xs text-slate-600 dark:text-slate-400">2026-03-17 11:47</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Se alcanzó el límite de solicitudes a la API de calendario.</p>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones del error 4" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            <button type="button" data-modal-open="error-detail-4" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <span class="inline-block rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-semibold text-rose-700 dark:bg-rose-950/50 dark:text-rose-300">Crítico</span>
+                        <p class="font-medium text-slate-900 dark:text-white">DocuParser</p>
+                        <p class="font-mono text-xs text-slate-600 dark:text-slate-400">2026-03-18 16:20</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">El agente no respondió al procesar un lote de documentos grande.</p>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones del error 5" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            <button type="button" data-modal-open="error-detail-5" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 flex items-start justify-between">
+                    <div class="space-y-2">
+                        <span class="inline-block rounded-full bg-sky-50 px-2.5 py-0.5 text-xs font-semibold text-sky-700 dark:bg-sky-950/50 dark:text-sky-300">Informativo</span>
+                        <p class="font-medium text-slate-900 dark:text-white">SupportBot</p>
+                        <p class="font-mono text-xs text-slate-600 dark:text-slate-400">2026-03-19 10:03</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">El agente se reinició automáticamente tras una actualización de skills.</p>
+                    </div>
+                    <div data-dropdown-container class="relative">
+                        <button type="button" data-dropdown-trigger aria-label="Acciones del error 6" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-700 dark:hover:text-white">⋮</button>
+                        <div data-dropdown-menu class="absolute right-0 top-full z-10 mt-2 hidden w-44 rounded-lg border border-slate-200 bg-white p-1 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            <button type="button" data-modal-open="error-detail-6" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Ver detalle</button>
+                            <button type="button" class="w-full rounded-md px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800">Marcar como resuelto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Modales de detalle de error -->
