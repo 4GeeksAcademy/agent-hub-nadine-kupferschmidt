@@ -207,3 +207,57 @@ El <textarea> del modal debe verse como un campo de texto real: borde, rounded-l
 
 Contenido: Aplicá estilos de Tailwind a este archivo completo (estructura y contenido ya definidos, no los alteres): #file:agents.html
 ```
+
+---
+
+## skills.html — Estructura + Contenido (Skills)
+
+**Prompt:**
+```
+Rol: Sos un desarrollador frontend que sigue un proceso de construcción por capas (estructura → contenido → estilo), sin adelantarte a la capa de estilo todavía.
+
+Stack: HTML semántico puro. Sin Tailwind, sin ninguna clase CSS, sin atributos style todavía. Podés usar los atributos data-* de dropdown/modal, porque son ganchos para js/app.js ya existente.
+
+Restricciones:
+
+Reutilizá exactamente la misma barra lateral (<nav>) y barra superior (<header>) de agents.html (#file:agents.html), cambiando el <h1> a "Skills" y el link activo de la sidebar a "Skills".
+El dropdown usa los mismos atributos que ya soporta js/app.js: data-dropdown-container, data-dropdown-trigger, data-dropdown-menu.
+El modal de "Ver detalle" usa: data-modal-open="skill-detail-{id}", data-modal="skill-detail-{id}", data-modal-close="skill-detail-{id}", data-modal-backdrop="skill-detail-{id}".
+No agregues JavaScript propio de esta página.
+
+Contenido: HTML completo (estructura + contenido, sin estilos) para el catálogo de "Skills" de AgentHub. Especificación:
+
+Un texto explicativo al inicio de la sección (antes del catálogo) que describa qué es una "skill" en AgentHub: una habilidad que se le puede asignar a un agente para ampliar sus capacidades (ej. navegar la web, leer documentos, gestionar calendarios).
+Un catálogo de 4 skills, cada una con nombre, descripción breve, y contador de agentes que la usan:
+Navegación web | "Permite al agente buscar y leer información en sitios web en tiempo real." | Usada por 2 agentes
+Lectura de documentos | "Permite al agente extraer y analizar contenido de archivos y documentos." | Usada por 3 agentes
+Gestión de calendario | "Permite al agente coordinar reuniones y revisar disponibilidad." | Usada por 2 agentes
+Envío de correos | "Permite al agente redactar y enviar correos electrónicos en nombre del cliente." | Usada por 1 agente
+Cada skill tiene un dropdown "⋮" con dos opciones: "Ver detalle" y "Eliminar".
+"Ver detalle" abre un modal con el nombre, descripción completa y contador de esa skill.
+Generá ids únicos por skill (skill-1, skill-2, etc.) para vincular cada modal con su trigger.
+
+Generá el archivo completo, con el mismo <head> que agents.html.
+```
+
+## skills.html — Estilo (Skills)
+
+**Prompt:**
+```
+Rol: Sos un desarrollador frontend senior especializado en Tailwind CSS y diseño de paneles de administración.
+
+Stack: Tailwind CSS vía CDN (misma configuración que agents.html).
+
+Restricciones:
+
+No cambies la estructura de etiquetas ni el contenido/texto existente. Solo agregá clases de Tailwind.
+Reutilizá el mismo <head>, sidebar y topbar que agents.html (#file:agents.html), con "Skills" como link activo.
+El texto explicativo de "qué es una skill" debe destacarse levemente del resto (ej. una caja con fondo sutil distinto, bg-slate-100/dark:bg-slate-800/50, rounded-lg, padding), para diferenciarlo visualmente del catálogo de tarjetas.
+Las 4 skills en una cuadrícula (grid): 1 columna en mobile, 2 en tablet, no hace falta una tercera columna en desktop salvo que prefieras 2 fijas — elegí lo que se vea mejor con tarjetas de este tamaño.
+Cada tarjeta de skill: mismo estilo de tarjeta que ya usamos (bg-white/dark:bg-slate-900, border, rounded-lg, shadow-sm, padding).
+El contador "Usada por N agentes" debe destacarse un poco (ej. como una badge o texto en color indigo, sin necesitar fondo de color completo).
+Dropdown: mismo estilo ya usado en users.html y agents.html.
+Modales: mismo estilo centrado con backdrop que ya usamos — IMPORTANTE: no te olvides de la clase "flex" junto con "hidden" en el contenedor del modal (ej. "hidden fixed inset-0 z-50 flex items-center justify-center p-6"), sin esa clase el modal no se centra cuando se muestra.
+
+Contenido: Aplicá estilos de Tailwind a este archivo completo (estructura y contenido ya definidos, no los alteres): #file:skills.html
+```
